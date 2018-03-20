@@ -1,0 +1,2 @@
+class Brigadeiro < ApplicationRecord
+end
