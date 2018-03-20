@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-03-20 13:42:32
+  paymentInfo: MyString
+  status: MyString
+  total: 1
+  user: one
+
+two:
+  date: 2018-03-20 13:42:32
+  paymentInfo: MyString
+  status: MyString
+  total: 1
+  user: two
