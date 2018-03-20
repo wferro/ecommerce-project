@@ -4,8 +4,12 @@ one:
   name: MyString
   description: MyString
   image: MyString
+  chocoball: one
+  sprinkle: one
 
 two:
   name: MyString
   description: MyString
   image: MyString
+  chocoball: two
+  sprinkle: two
