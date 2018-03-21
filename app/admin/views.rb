@@ -12,4 +12,6 @@ ActiveAdmin.register View do
 #   permitted
 # end
 
+  permit_params :title, :content
+
 end
