@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class BrigadeirosControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get brigadeiros_index_url
+  test "should get detail" do
+    get brigadeiros_detail_url
     assert_response :success
   end
 

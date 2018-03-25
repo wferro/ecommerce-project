@@ -1,0 +1,47 @@
+
+	<div id="all">
+    <%= render "commons/commonHeader" %>
+        <section class="top-section">
+       			<div class="offset-borders">
+               		<div class="full-header-container" id="header-gallery">
+                   		<div class="full-header">
+                       		<div class="container">
+                           		<h1>Product Gallery</h1>
+                           		<h3>Here you will find all options and information about your product</h3>
+                       		</div>
+                   		</div>
+               		</div>
+           		</div>
+       		</section>
+
+       		<section id="gallery-section">
+       			<div class="container">
+               		<div class="col-md-5">
+                   		<article class="gallery-info">
+                       		<div class="article-header-5">
+                           		<div class="price-label onscroll-animate" data-delay="500">
+                               		<span class="price-label-content">111</span>
+                           		</div>
+                           		<h1><%= @brigadeiro.name %></h1>
+                           		<h3><%= @brigadeiro.description %></h3>
+                       		</div>
+                       		<p align="justify"><%= @brigadeiro.sprinkle.description %></p>
+                          <p align="justify"><%= @brigadeiro.chocoball.description %></p>
+                   		</article>
+                   		<div class="product product-detail-container">
+                           	<div class="product-icons" align="center">
+								<div class="product-icon-container cart-icon" align="right">
+									<spring:url value="/products/${product.productId}/addcart" var="cartUrl" />
+                                    <a href="javascript:;" onclick="addCart('${cartUrl}', this)"><i class="fa fa-shopping-cart"></i></a>
+								</div>
+							</div>
+               			</div>
+               		</div>
+               		<div class="col-md-6 col-md-offset-1 onscroll-animate">
+                   		<div id="gallery-slider" class="gallery-slider">
+                          <%= image_tag brigadeiro.image , style:'height:600px;width:450px;' %>
+                   		</div>
+               		</div>
+           		</div>
+       		</section>
+    </div>
