@@ -1,0 +1,37 @@
+<header class="page-header">
+	<div class="page-header-content container">
+		<div class="menu-button-container">
+			<i id="menu-button" class="menu-button fa fa-reorder"></i>
+		</div>
+		<nav id="nav-top" class="nav-top">
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/">Home</a></li>
+				<li><a href="${pageContext.request.contextPath}/products">Products</a>
+					<ul>
+						<li><a href="${pageContext.request.contextPath}/productCustom">Customize</a></li>
+
+					</ul>
+				</li>
+				<li><a href="${pageContext.request.contextPath}/services">Services</a>
+					<ul>
+						<li><a href="${pageContext.request.contextPath}/services1">Catering & Events</a></li>
+						<li><a href="${pageContext.request.contextPath}/services2">Corporate Gifts</a></li>
+						<li><a href="${pageContext.request.contextPath}/services3">Party Trays</a></li>
+						<li><a href="${pageContext.request.contextPath}/services4">Become a Partner</a></li>
+					</ul>
+				</li>
+			</ul>
+			<h1 class="logo-primary">
+				<%= image_tag 'Logo1.png', id:"logo-1", alt:"Bakery" %>
+			</h1>
+			<div class="logo-secondary">
+				<%= image_tag 'Logo.png', id:"logo-2", alt:"Bakery" %>
+			</div>
+			<ul>
+				<li><a href="${pageContext.request.contextPath}/about">About</a></li>
+				<li><a href="${pageContext.request.contextPath}/contact">Contact</a></li>
+				<li class="menu-cart"><a href="${pageContext.request.contextPath}/cart">Cart</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>

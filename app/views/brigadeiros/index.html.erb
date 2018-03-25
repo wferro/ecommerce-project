@@ -1,2 +1,100 @@
-<h1>Brigadeiros#index</h1>
-<p>Find me in app/views/brigadeiros/index.html.erb</p>
+
+	<div id="all">
+    <%= render "commons/commonHeader" %>
+
+        <!-- Banner Slider da Home -->
+        <section id="slider-container" class="top-section">
+            <div class="offset-borders">
+        	</div>
+        </section>
+        <!-- Banner Slider da Home -->
+
+
+        <section id="products-section">
+            <div class="section-content">
+                <div class="container">
+                    <header class="section-header">
+                        <h1>Take a look at some of our Brigadeiros</h1>
+                    </header>
+
+                    <div id="products-slider-1" class="products-slider">
+<c:forEach var="prod" items="${homeProducts}" varStatus="loopCounter" end="7">
+<c:if test="${(loopCounter.count - 1) % 8 == 0 || loopCounter.first}">
+                        <div><!-- slide 1 -->
+</c:if>
+<c:if test="${(loopCounter.count - 1) % 4 == 0 || loopCounter.first}">
+                            <div class="row">
+</c:if>
+<c:if test="${loopCounter.count % 2 != 0}">
+                                <div class="col-md-6 onscroll-animate">
+                                    <div class="row">
+</c:if>
+			                             <div class="col-sm-6">
+			                                 <div class="product">
+			                                     <div class="product-preview">
+			                                         <a href="${pageContext.request.contextPath}/products/${prod.productId}"><img alt="product 1" src="${imagesUrl}/${prod.image}"></a>
+			                                     </div>
+			                                     <div class="product-detail-container">
+			                                         <div class="product-icons">
+<c:if test="${prod.containerType.code == 1}">
+<c:forEach var="box" items="${boxList}">
+			                                             <div class="product-icon-container qtd-icon" container-id="${box.id}" prod-id="${prod.productId}">
+			                                                 <a href="javascript:;">
+			                                                 	<i>
+			                                                 		<span>${box.capacity}</span>
+			                                                 	</i>
+			                                                 </a>
+			                                             </div>
+</c:forEach>
+</c:if>
+<c:if test="${prod.containerType.code == 2}">
+<c:forEach var="pot" items="${potList}">
+			                                             <div class="product-icon-container qtd-icon" container-id="${pot.id}" prod-id="${prod.productId}">
+			                                                 <a href="javascript:;">
+			                                                 	<i>
+			                                                 		<span>${pot.weight}g</span>
+			                                                 	</i>
+			                                                 </a>
+			                                             </div>
+</c:forEach>
+</c:if>
+			                                         </div>
+			                                         <div class="product-detail">
+			                                         	<h2>
+			                                         		<a href="${pageContext.request.contextPath}/products/${prod.productId}">${prod.name}</a>
+			                                         	</h2>
+			                                            <p>${prod.description}</p>
+			                                            <p class="product-price">$
+			                                            	<span class="price-value">${prod.price}</span>
+			                                            </p>
+			                                            <div class="product-icon-container cart-icon" selected-container-id="">
+                                                    		<a href="javascript:;" onclick="addCart('${prod.productId}', this)">
+                                                    			<i class="fa fa-shopping-cart"></i>
+                                                    		</a>
+                                                		</div>
+			                                         </div>
+			                                     </div><!-- .product-detail-container -->
+			                                 </div><!-- .product -->
+			                             </div>
+<c:if test="${loopCounter.count % 2 == 0  || loopCounter.last}">
+                                    </div><!-- .row -->
+                                </div><!-- .col-md-6 -->
+</c:if>
+<c:if test="${((loopCounter.count) % 4) == 0 || loopCounter.last}">
+                            </div><!-- .row -->
+</c:if>
+<c:if test="${((loopCounter.count) % 8) == 0 || loopCounter.last}">
+                        </div><!-- .slide-1 -->
+</c:if>
+</c:forEach>
+                    </div><!-- .products-slider -->
+
+                    <p class="text-center onscroll-animate">
+                        <a href="${pageContext.request.contextPath}/products" class="button-void">See all our products</a>
+                    </p>
+                    <div class="margin-60"></div>
+                </div><!-- .container -->
+            </div><!-- .section-content -->
+        </section>
+        <%= render "commons/commonFooter" %>
+    </div>

@@ -1,0 +1,628 @@
+#cart-hover {
+	width: 350px;
+	padding: 10px;
+
+	position: absolute;
+	right: 100px;
+	top: 110px;
+	z-index: 99999;
+	box-shadow: 0 0 10px 1px #777777;
+
+	background-color: #FFFFFF;
+	font-family: "Open sans";
+
+	text-align: left;
+}
+
+#cart-hover form {
+	padding: 0 15px;
+}
+
+#cart-hover ul li {
+	text-align: left;
+	padding: 15px 0;
+	position: relative;
+}
+
+#cart-hover ul li p {
+	display: inline-block;
+}
+
+#cart-hover span {
+	display: inline-block;
+}
+
+#cart-hover img {
+	width: 50px;
+	height: 50px;
+	margin-top: -20px;
+	float: right;
+}
+
+#cart-hover ul li::after {
+	content: "x";
+	width: 18px;
+	height: 18px;
+	border: 2px solid red;
+    color: red;
+    text-align: center;
+    font-weight: 900;
+    position: absolute;
+    border-radius: 50%;
+    line-height: .9;
+    top: 9px;
+    right: -5px;
+    cursor: pointer;
+}
+
+#cart-hover form button:first-of-type {
+	margin-right: 8%;
+}
+
+#cart-hover form button {
+	margin: 10px 0;
+	width: 45%;
+	box-sizing: border-box;
+}
+
+.form-service button.button-active,
+#cart-hover form button.button-active {
+	background-color: #fdb822;
+	border: none;
+	height: 40px;
+
+	font-size: 14px;
+	font-weight: 600;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+
+.form-service button.button-inactive,
+#cart-hover form button.button-inactive {
+	background-color: #FFFFFF;
+	border: 2px solid #684f40;
+	height: 40px;
+
+	font-size: 14px;
+	font-weight: 600;
+	color: #684f40;
+	text-transform: uppercase;
+}
+
+.form-service button.button-inactive {
+	margin: 20px 0 ;
+}
+ 
+.form-service button.button-inactive:hover {
+	background-color: #684f40;
+ 	color: #FFFFFF;
+}
+ 
+.service-form button.button-active {
+	margin-bottom: 20px;
+}
+
+#cart-hover form button:hover {
+	background-color: #684f40;
+	color: #FFFFFF;
+}
+
+ul li.menu-cart {
+	position: relative;
+}
+
+ul li span.cart-counter {
+	width: 20px;
+    height: 20px;
+    background-color: #fdb822;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    transform: rotate(45deg);
+    position: relative;
+    top: -25px;
+    right: -50%;
+    box-shadow: 0 0 10px 1px #777777;
+}
+
+form.service-form {
+	display: none;
+}
+
+.form-service button.button-inactive:focus,
+.form-service form select:focus {
+	outline: none;
+}
+
+table.customize tr td select,
+form.service-form select {
+	background: transparent;
+   	font-size: 14px;
+   	padding: 5px;
+ 		  
+   	border: 1px solid #fdb822;
+   	height: 45px;
+   	width: 100%;
+}
+
+form.service-form input,
+form.service-form textarea {
+	border: 1px solid #fdb822;
+	padding: 10px;
+}
+
+/* CONTACT */
+
+.contact-info-aside {
+	background-color: #FFFFFF;
+    padding: 20px 50px;
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    right: 70px;
+}
+
+
+
+/* ======== CART ======== */
+
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+
+table.customize,
+table.cart { 
+  	border-collapse: collapse;
+    width: 90%;
+    margin: 40px auto;
+    border: 1px solid #EEEEEE;
+}
+
+.vu_wc-cart-totals h2,
+table.customize th,
+table.cart th { 
+  background: #f5f5f5; 
+  color: #343434; 
+  text-transform: uppercase;
+  font-weight: bold; 
+  height: 50px;
+  text-align: center;
+}
+
+table.customize td,
+table.cart td { 
+    padding: 20px 6px; 
+  	text-align: center; 
+}
+
+table.cart tr {
+	border: 1px solid #eeeeee; 
+}
+
+table.cart td.product-thumbnail img {
+    width: 80px;
+    height: 80px;
+}
+
+table.cart td.product-quantity input[type="number"]{
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #fdb822;
+}
+
+table.cart td.product-remove span {
+	padding: 0 4px;
+    border: 2px solid red;
+    color: red;
+    text-align: center;
+    font-weight: 900;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.vu_wc-cart-totals {
+	width: 90%;
+}
+
+.vu_wc-cart-totals h2 {
+	margin: 0;
+	padding: 0;
+	line-height: 50px;
+	border: 1px solid #EEEEEE;
+	border-bottom: none;
+}
+
+.vu_wc-cart-totals-content {
+	border: 1px solid #EEEEEE;
+}
+
+.vu_wc-cart-totals-content table {
+	width: 100%;
+}
+
+.vu_wc-cart-totals-content table tr {
+	height: 60px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.vu_wc-cart-totals-content table tr:last-of-type {
+	border-bottom: none;
+}
+
+.vu_wc-cart-totals-content table tr th {
+	padding-left: 20px;
+}
+
+.vu_wc-cart-totals-content table tr td {
+	text-align: right;
+	padding-right: 20px;
+}
+
+.wc-proceed-to-checkout a {
+	float: right;
+	margin-top: 20px;
+}
+
+
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table.cart, table.cart thead, table.cart tbody, table.cart th, table.cart td, table.cart tr { 
+		display: block; 
+	}
+
+	table.cart {
+		border: none;
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	table.cart thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	table.cart tr { border: 1px solid #eeeeee; margin-bottom: 10px; }
+	
+	table.cart td:nth-child(2),
+	table.cart td:nth-child(3) {
+		margin-top: 20px;
+	}
+
+	table.cart td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eeeeee; 
+		position: relative;
+	}
+	
+	table.cart td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	table.cart td:nth-of-type(1):before { content: ""; }
+	table.cart td:nth-of-type(2):before { content: "Image"; position: absolute; top: -10px; left: 30%; text-transform: uppercase; font-weight: bold;}
+	table.cart td:nth-of-type(3):before { content: "Description"; position: absolute; top: -10px; left: 30%; text-transform: uppercase; font-weight: bold;}
+	table.cart td:nth-of-type(4):before { content: "Price"; position: absolute; top: 20px; left: 0; text-transform: uppercase; font-weight: bold;}
+	table.cart td:nth-of-type(5):before { content: "Quantity"; position: absolute; top: 40px; left: 0; text-transform: uppercase; font-weight: bold; }
+	table.cart td:nth-of-type(6):before { content: "Total"; position: absolute; top: 20px; left: 0; text-transform: uppercase; font-weight: bold; }
+
+
+	.vu_wc-cart-totals {
+		margin: 0 auto;
+	}
+}
+
+
+
+
+/* =====  CUSTOM PAGE ======== */
+
+.customize-wrap {
+	width: 100%;
+	border: 1px solid #E5E5E5;
+}
+
+.customize-header {
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+
+.customize-header button {
+	width: 33%;
+	height: 50px;
+	background-color: #684f40;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: 1px solid #000;
+}
+
+.customize-header button:focus {
+	outline: none;
+}
+
+.customize-flavours {
+	text-align: center;
+	padding: 10px;
+}
+
+.customize-flavours p {
+	margin-top: 20px;
+}
+
+.customize-flavours .flavours button {
+	padding: 15px 22px;
+	margin: 5px;
+	border-radius: 50%;
+	border: none;
+	background-color: #684f40;
+
+	color: #FFFFFF;
+	font-size: 18px;
+
+	position:relative;
+	z-index: 0;
+	outline: none;
+}
+
+.customize-flavours .flavours button:before {
+  content: "";
+  position: absolute;
+  z-index:-1;
+  top: 0;  left: 0;  right: 0;  bottom: 0;
+  background: #fdb822;
+  border-radius: 50%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .2s ease-out;
+}
+
+.customize-flavours .flavours button:hover:before{transform: scaleX(1);}
+
+
+.customize-content p {
+	text-align: center;
+	margin: 20px auto;
+}
+
+table.customize {
+	width: 100%;
+	margin: 20px 0;
+	border: none;
+}
+
+table.customize th {
+	height: 40px;
+}
+
+table.customize tr {
+	border-bottom: 1px solid #E5E5E5;
+}
+
+table.customize tr:last-child {
+	border-bottom: none;
+}
+
+table.customize tr td {
+	padding: 10px 10px;
+}
+
+table.customize tr:first-of-type td {
+	padding-top: 20px;
+}
+
+table.customize tr td select {
+	width: 70%;
+}
+
+table.customize tr td img {
+	width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+table.customize tr td.your-brigadeiro img {
+	width: 100px;
+	height: 100px;
+}
+
+.customize-add-button,
+button.customize-button-active {
+	background-color: #fdb822 !important;
+    border: 1px solid #fdb822 !important;
+}
+
+.customize-add-button {
+	padding: 10px 20px;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	float: right;
+	margin-top: 20px;
+    outline: none;
+}
+
+.customize-add-button i {
+	margin-right: 20px;
+}
+
+#customize_content,
+#customize_flavours {
+	display: none;
+}
+
+.box-custom-total-price td:first-of-type {
+	text-align: right;
+}
+ 		 
+.box-custom-total-price td {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    padding: 20px 10px 0 10px !important;
+}
+
+/* ======== CHECKOUT ======== */
+
+table.summary-order {
+	width: 100%;
+	border: 1px solid #EEEEEE;
+}
+
+table.summary-order tr,
+table.summary-order td {
+	height: 45px;
+	border: 1px solid #EEEEEE;
+}
+
+table.summary-order td,
+table.summary-order th {
+	padding: 10px;
+}
+
+table.summary-order td.box-size,
+table.summary-order td.product-total {
+	text-align: center;
+}
+
+table.summary-order th.box-size,
+table.summary-order th.product-total {
+	background-color: #F9F9F9;
+	text-align: center;
+}
+
+table.summary-order th.product-description {
+	width: 75%;
+}
+
+table.summary-order th {
+	text-align: left;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #000000;
+    border: 1px solid #EEEEEE;
+}
+
+
+#billing_detail button {
+	width: 49%;
+	height: 40px;
+	background-color: #684f40;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+	
+	margin:5px auto;
+    position:relative;
+	z-index: 0;
+}
+
+#billing_detail button:before {
+  content: "";
+  position: absolute;
+  z-index:-1;
+  top: 0;  left: 0;  right: 0;  bottom: 0;
+  background: #fdb822;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .3s ease-out;
+}
+
+.customer-ordering-options button {
+	margin-top: 20px !important;
+}
+
+#billing_detail button:hover:before{transform: scaleX(1);}
+
+
+#billing_detail .header-customer-ordering button {
+	margin-top: 0;
+}
+
+#billing_detail .customer-ordering-options button:last-of-type,
+#billing_detail .header-customer-ordering button:last-of-type {
+	float: right;
+}
+
+#new_customer_personal {
+	display: block;
+}
+
+#new_customer_address {
+	display: block;
+}
+
+#new_customer_pickup {
+	display: none;
+}
+
+#returning_customer_personal {
+	display: none;
+}
+
+.customer-order-button {
+	padding: 15px 30px;
+	margin-top: 20px;
+}
+
+#returning_customer_personal i {
+	color: green;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#new_customer_address select,
+#new_customer_pickup select{
+	background: transparent;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #fdb822;
+    height: 34px;
+    margin: 10px 0;
+}
+
+
+/* ========= CONTACT PAGE FIX ======== */
+section#contact-section .content-box {
+	border: none;
+	margin-top: 0;
+}
+
+
+
+
+
+
