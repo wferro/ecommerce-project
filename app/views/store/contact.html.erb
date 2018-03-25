@@ -1,0 +1,41 @@
+  <div id="all">
+    <%= render "commons/commonHeader" %>
+    <section class="top-section">
+          	<div class="offset-borders">
+                  <div class="full-header-container" id="header-services">
+                      <div class="full-header">
+                          <div class="container">
+                              <h1>Contact</h1>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+
+          <section id="about-section">
+          	<div class="section-content">
+                  <div class="container">
+                      <header class="section-header">
+                          <h1>Contact Chocoball Brigadeiro</h1>
+                      </header>
+
+                      <div class="row">
+                      	<div class="col-md-6 onscroll-animate">
+                          </div>
+                          <div class="col-md-6 onscroll-animate" data-delay="400">
+                          	<article>
+                              	<div class="article-header-2">
+                          			<h1>How to contact us</h1>
+                          		</div>
+
+                              <% @views.each do |cont| %>
+                                <p> <%= cont.content %> </p>
+                              <% end %>
+
+                              </article>
+                          </div>
+                      </div>
+                	</div>
+            	</div>
+        	</section>
+    </div>
