@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'store#contact'
   get 'about', to: 'store#about'
   get 'brigadeiros', to: 'brigadeiros#index'
-  get 'brigadeiros/:id', to 'brigadeiros#detail'
+  get 'brigadeiros/:id', to: 'brigadeiros#detail'
 
   root to: 'brigadeiros#index'
 
