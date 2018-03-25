@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'store/contact'
+  get 'contact', to: 'store#contact'
+  get 'about', to: 'store#about'
 
-  get 'store/about'
-
-  get 'brigadeiros/index'
+  root to: 'brigadeiros#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

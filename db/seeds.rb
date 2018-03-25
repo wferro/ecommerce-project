@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke", chocoball: cmovie: movies.first)
-#AdminUser.create!(email: 'admin@example.com", chocoball: cpassword: 'password", chocoball: cpassword_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com", chocoball: cpassword: 'password", chocoball: cpassword_confirmation: 'password') if Rails.env.development?
 
 Brigadeiro.destroy_all
 Chocoball.destroy_all

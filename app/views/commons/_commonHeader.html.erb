@@ -5,21 +5,8 @@
 		</div>
 		<nav id="nav-top" class="nav-top">
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/">Home</a></li>
-				<li><a href="${pageContext.request.contextPath}/products">Products</a>
-					<ul>
-						<li><a href="${pageContext.request.contextPath}/productCustom">Customize</a></li>
-
-					</ul>
-				</li>
-				<li><a href="${pageContext.request.contextPath}/services">Services</a>
-					<ul>
-						<li><a href="${pageContext.request.contextPath}/services1">Catering & Events</a></li>
-						<li><a href="${pageContext.request.contextPath}/services2">Corporate Gifts</a></li>
-						<li><a href="${pageContext.request.contextPath}/services3">Party Trays</a></li>
-						<li><a href="${pageContext.request.contextPath}/services4">Become a Partner</a></li>
-					</ul>
-				</li>
+				<li><%= link_to 'Home', "/" %></li>
+				<li><%= link_to 'About', "/about" %></li>
 			</ul>
 			<h1 class="logo-primary">
 				<%= image_tag 'Logo1.png', id:"logo-1", alt:"Bakery" %>
@@ -28,8 +15,7 @@
 				<%= image_tag 'Logo.png', id:"logo-2", alt:"Bakery" %>
 			</div>
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/about">About</a></li>
-				<li><a href="${pageContext.request.contextPath}/contact">Contact</a></li>
+				<li><%= link_to 'Contact', "/contact" %></li>
 				<li class="menu-cart"><a href="${pageContext.request.contextPath}/cart">Cart</a></li>
 			</ul>
 		</nav>
