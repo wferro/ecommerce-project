@@ -10,6 +10,6 @@ class Brigadeiro < ApplicationRecord
   validates :sprinkle_id, presence: true
   validates :chocoball_id, presence: true
 
-  mount_uploader :image, ImageUploader
+  #mount_uploader :image, ImageUploader
 
 end
