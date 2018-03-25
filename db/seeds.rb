@@ -22,3 +22,11 @@ s8 = Sprinkle.create(name: "Blossoms Duo",              description: "White and 
 s9 = Sprinkle.create(name: "Milk Chocolate Flakes",     description: "Callebaut milk chocolate flakes have a pleasant texture and irregular shapes which makes them completely irresistible ",                                                                                      price: 100, image: "sprinkle_chocolate_flakes.jpg")
 s10= Sprinkle.create(name: "White Chocolate Blossom",   description: "White chocolate blossoms add a festive and sophisticated touch to your Chocoball Brigadeiro.  They not only look great but they also taste the part as they are made with 100% Callebaut chocolate.",         price: 100, image: "sprinkle_white_blossom.jpg")
 s11= Sprinkle.create(name: "Dark Chocolate Blossom",    description: "Dark chocolate blossoms add a festive and sophisticated touch to your Chocoball Brigadeiro. They not only look great but they also taste the part as they are made with 100% Callebaut chocolate.",           price: 100, image: "sprinkle_dark_blossom.jpg")
+
+puts "Created #{Sprinkle.count} Sprinkles."
+
+c1 = Chocoball.create(name: "Dark Chocolate",  description: "Our dark chocolate brigadeiro paste is made with the highest quality of Belgian Chocolate available, we outsource our chocolate from Callebaut",  price: 83, image: "filling_dark.jpg")
+c2 = Chocoball.create(name: "White Chocolate", description: "Our white chocolate brigadeiro paste is made with the highest quality of Belgian Chocolate available, we outsource our chocolate from Callebaut", price: 83, image: "filling_white.jpg")
+c3 = Chocoball.create(name: "Strawberry",      description: "Our strawberry paste is chocolate free for those that do not want to eat much chocolate. This one is the favourtie of the kids.",  price: 100, image: "filling_strawberry.jpg")
+
+puts "Created #{Chocoball.count} Chocoballs."
