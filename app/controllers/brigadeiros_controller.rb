@@ -3,7 +3,7 @@ class BrigadeirosController < ApplicationController
     @brigadeiros = Brigadeiro.all.order(name: :asc)
   end
 
-  def detail
+  def show
     @brigadeiro = Brigadeiro.find(params[:id])
   end
 end

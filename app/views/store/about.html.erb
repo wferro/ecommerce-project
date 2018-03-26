@@ -23,29 +23,29 @@
                     	<div class="col-md-6 onscroll-animate">
                         </div>
                         <div class="col-md-6 onscroll-animate" data-delay="400">
-                        	<article>
-                            	<div class="article-header-2">
-                        			<h1>A little bit about us</h1>
-                        		</div>
 
-                            <% @views.each do |about| %>
-                              <p> <%= about.content %> </p>
-                            <% end %>
-
-                            </article>
-
-                            <div class="margin-20"></div>
-
+                          <% if @views.empty? %>
                             <div class="row">
-                            	<div class="col-xs-6">
-                                	<div class="item-check">Unique flavor</div>
-                               		<div class="item-check">TOP ingredients</div>
+                              <div class="col-xs-6">
+                                  <div class="item-check">Unique flavor</div>
+                                  <div class="item-check">TOP ingredients</div>
                                 </div>
                                 <div class="col-xs-6">
-                                	<div class="item-check">Brazilian sweet</div>
-                                	<div class="item-check">Made with love</div>
+                                  <div class="item-check">Brazilian sweet</div>
+                                  <div class="item-check">Made with love</div>
                                 </div>
                             </div>
+                            <% else %>
+                              <article>
+                              	<div class="article-header-2">
+                          			<h1>A little bit about us</h1>
+                          		</div>
+
+                              <% @views.each do |about| %>
+                                <p> <%= about.content %> </p>
+                              <% end %>
+                              </article>
+                            <% end %>
                             <div class="margin-70"></div>
                         </div>
                     </div>

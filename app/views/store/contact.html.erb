@@ -28,10 +28,13 @@
                           			<h1>How to contact us</h1>
                           		</div>
 
-                              <% @views.each do |cont| %>
-                                <p> <%= cont.content %> </p>
+                              <% if @views.empty? %>
+                                <p> Default content!!!!!</p>
+                              <% else %>
+                                <% @views.each do |cont| %>
+                                  <p> <%= cont.content %> </p>
+                                <% end %>
                               <% end %>
-
                               </article>
                           </div>
                       </div>
