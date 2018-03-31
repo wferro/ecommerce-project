@@ -12,4 +12,8 @@ class Brigadeiro < ApplicationRecord
 
   # mount_uploader :image, ImageUploader
 
+  def getPrice
+      (self.chocoball.price + self.sprinkle.price) / 100.0
+  end
+
 end

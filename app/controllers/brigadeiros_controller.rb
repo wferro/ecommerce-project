@@ -2,6 +2,7 @@ class BrigadeirosController < ApplicationController
   def index
 
     @categories = Chocoball.all
+    @quantities = [5,10,15,20]
     @keyword = params[:key_word]
     @catword = params[:cat]
 
