@@ -24,4 +24,12 @@ class BrigadeirosController < ApplicationController
   def show
     @brigadeiro = Brigadeiro.find(params[:id])
   end
+
+  def addCart
+    id = params[:id].to_i
+    session[:my_cart] ||= []
+    session[:my_cart] << id
+    @cartItems = Brigadeiro.find(session[:my_cart])
+    redirect_to customers_path
+  end
 end

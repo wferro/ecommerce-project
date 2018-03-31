@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get 'about', to: 'store#about'
   get 'brigadeiros', to: 'brigadeiros#index'
   get 'brigadeiros/:id', to: 'brigadeiros#show'
+  post 'brigadeiros/:id/addCart', to: 'brigadeiros#addCart'
   resources :brigadeiros
+
+  get 'cart', to: 'customer#cart'
 
   root to: 'brigadeiros#index'
 

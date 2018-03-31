@@ -1,0 +1,44 @@
+
+	<div id="all">
+    <%= render "commons/commonHeader" %>
+    <section class="top-section">
+      <div class="offset-borders">
+            <div class="full-header-container" id="header-services">
+                <div class="full-header">
+                    <div class="container">
+                        <h1>Cart</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <section id="carts-section">
+            <div class="section-content">
+                <div class="container">
+                    <header class="section-header">
+                        <h1>Your cart so far</h1>
+                    </header>
+
+										<% if @cartItems.empty? %>
+										<p> No item added to the cart yet
+										<% else %>
+										<div>
+											<% @cartItems.each do |item| %>
+											<div class="grid-item">
+												<h3><%= item.name %></h3>
+												<h3>$<%= item.getPrice %> each</h3>
+												<%= label_tag(:qtd, "Quantity:") %>
+												<%= select_tag :qtd, options_for_select(@quantities) %>
+												<%= link_to "Update your cart", brigadeiro_path(prod) %>
+											</div>
+                      <hr>
+											<% end %>
+										</div>
+										<% end %>
+                </div><!-- .container -->
+            </div><!-- .section-content -->
+            <%= link_to "Delete your cart", brigadeiro_path(prod) %>
+        </section>
+    </div>
