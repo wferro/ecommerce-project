@@ -13,6 +13,14 @@
         </div>
     </section>
 
+
+			<%= form_tag('/', method: "get") do %>
+			  <%= label_tag(:q, "Search for:") %>
+			  <%= text_field_tag(:key_word) %>
+			  <%= submit_tag("Search") %>
+			<% end %>
+
+
         <section id="products-section">
             <div class="section-content">
                 <div class="container">

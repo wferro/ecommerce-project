@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   get 'about', to: 'store#about'
   get 'brigadeiros', to: 'brigadeiros#index'
   get 'brigadeiros/:id', to: 'brigadeiros#show'
-
-    resources :brigadeiros
+  resources :brigadeiros
 
   root to: 'brigadeiros#index'
 
