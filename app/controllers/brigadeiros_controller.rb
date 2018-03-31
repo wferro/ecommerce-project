@@ -1,11 +1,22 @@
 class BrigadeirosController < ApplicationController
   def index
-    @keyword = params[:key_word]
 
-    if @keyword
-      @brigadeiros = Brigadeiro.where("name LIKE :query", query: "%#{params[:key_word]}%").order(name: :asc)
+    @categories = Chocoball.all
+    @keyword = params[:key_word]
+    @catword = params[:cat]
+
+    if !@keyword.blank?
+      if !@catword.blank?
+        @brigadeiros = Brigadeiro.where("name LIKE :query", query: "%#{params[:key_word]}%").where(chocoball: @catword)
+      else
+        @brigadeiros = Brigadeiro.where("name LIKE :query", query: "%#{params[:key_word]}%").order(name: :asc)
+      end
     else
-      @brigadeiros = Brigadeiro.all.order(name: :asc)
+      if !@catword.blank?
+        @brigadeiros = Brigadeiro.where(chocoball: @catword).order(name: :asc)
+      else
+        @brigadeiros = Brigadeiro.all.order(name: :asc)
+      end
     end
   end
 
