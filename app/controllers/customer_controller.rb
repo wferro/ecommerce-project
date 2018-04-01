@@ -33,13 +33,37 @@ class CustomerController < ApplicationController
   end
 
   def checkout
+    province = Province.find(params[:address_province].to_i)
+    status = Status.where("name = 'AWAITING_PAYMENT'")
+    user = User.create(name: params['customer_name'], email: params['customer_email'], phone: params['customer_phone'])
+    address = Address.create(
+      location: params['address_location'],
+      postal_code: params['address_postal'],
+      additional_info: params['address_info'],
+      user: user,
+      province: province)
+
+    session[:delivery_address] = address
+
+    total = 0
+    @cartItems.each do |i|
+			total = total + i['subtotal'].to_f
+		end
+
+    order = Order.create(
+      status: status,
+      user: user,
+      total: total,
+      pst: total * pst / 100,
+      gst: total * gst / 100)
+
   end
 
   def order
   end
 
   def load_provinces
-    @provinces = Brigadeiro.all
+    @provinces = Province.all
   end
 
 end

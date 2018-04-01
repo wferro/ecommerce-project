@@ -40,6 +40,6 @@ before_action :load_provinces
   end
 
   def load_provinces
-    @provinces = Brigadeiro.all
+    @provinces = Province.all
   end
 end

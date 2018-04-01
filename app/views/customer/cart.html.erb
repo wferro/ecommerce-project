@@ -53,32 +53,28 @@
             <div class="section-content">
                 <div class="container">
 										<div>
-                      <%= form_tag(checkoutCart_path, method: "post") do %>
-                        <h1>Customer Information</h1>
+                      <%= form_tag(customer_checkout_path, method: "post") do %>
+                        <h2>Customer Information</h2>
                         <%= label_tag(:customer_name, "Name:") %>
-                        <%= text_field_tag(:customer_name) %>
+                        <%= text_field_tag(:customer_name) %><br><br>
                         <%= label_tag(:customer_email, "Email:") %>
-                        <%= text_field_tag(:customer_email) %>
+                        <%= text_field_tag(:customer_email) %><br><br>
                         <%= label_tag(:customer_phone, "Phone:") %>
-                        <%= text_field_tag(:customer_phone) %>
+                        <%= text_field_tag(:customer_phone) %><br><br>
                         <h3>Address</h3>
                         <%= label_tag(:address_location, "Location:") %>
-                        <%= text_field_tag(:address_location) %>
+                        <%= text_field_tag(:address_location) %><br><br>
                         <%= label_tag(:address_postal, "Postal Code:") %>
-                        <%= text_field_tag(:address_postal) %>
+                        <%= text_field_tag(:address_postal) %><br><br>
                         <%= label_tag(:address_info, "Additional Information:") %>
-                        <%= text_field_tag(:address_info) %>
+                        <%= text_field_tag(:address_info) %><br><br>
 												<%= label_tag(:address_province, "Province:") %>
-												<%= select_tag :address_province, options_from_collection_for_select(@provinces, "id", "name") %>
+												<%= select_tag :address_province, options_from_collection_for_select(@provinces, "id", "name") %><br><br>
 												<%= submit_tag("Checkout") %>
-											</div>
                       <% end %>
+                      </div>
                       <hr>
-											<% end %>
 										</div>
-										<% end %>
                 </div><!-- .container -->
-            </div><!-- .section-content -->
-
         </section>
     </div>
