@@ -3,7 +3,7 @@ class CustomerController < ApplicationController
   before_action :load_cart
   before_action :load_provinces
   def cart
-    @quantities = [5,10,15,20]
+    @quantities = [5, 10, 15, 20]
   end
 
   def load_cart
@@ -14,8 +14,8 @@ class CustomerController < ApplicationController
     @cartItems.each do |i|
 			if i['brigadeiro']['id'] == params['id'].to_i
 				session[:my_cart].delete(i)
-			end
-		end
+      end
+    end
     redirect_to cart_path
   end
 

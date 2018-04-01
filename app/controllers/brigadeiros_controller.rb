@@ -9,9 +9,11 @@ before_action :load_provinces
 
     if !@keyword.blank?
       if !@catword.blank?
-        @brigadeiros = Brigadeiro.where("name LIKE :query", query: "%#{params[:key_word]}%").where(chocoball: @catword)
+        @brigadeiros = Brigadeiro.where("name LIKE :query",
+          query: "%#{params[:key_word]}%").where(chocoball: @catword)
       else
-        @brigadeiros = Brigadeiro.where("name LIKE :query", query: "%#{params[:key_word]}%").order(name: :asc)
+        @brigadeiros = Brigadeiro.where("name LIKE :query",
+          query: "%#{params[:key_word]}%").order(name: :asc)
       end
     else
       if !@catword.blank?
@@ -30,7 +32,8 @@ before_action :load_provinces
     session[:my_cart] ||= []
     b = Brigadeiro.find(params[:id])
     session[:my_cart] << CartItem.new(params[:qtd], b)
-    flash[:message] = " #{params[:qtd]} brigadeiros of  #{b.name}  added succesfuly to your cart"
+    flash[:message] = " #{params[:qtd]} brigadeiros of
+      #{b.name}  added succesfuly to your cart"
     redirect_to cart_path
   end
 

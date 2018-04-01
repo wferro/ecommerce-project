@@ -1,3 +1,4 @@
+#Class Cart Item helper
 class CartItem
 
   attr_reader :quantity
