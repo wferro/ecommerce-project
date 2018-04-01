@@ -58,6 +58,17 @@ class CustomerController < ApplicationController
       gst: total * province.gst / 100,
       status: st)
 
+    @cartItems.each do |i|
+      brigadeiro = Brigadeiro.find(i['brigadeiro']['id'])
+      OrderItem.create(
+        quantity: i['quantity'].to_i,
+        total: brigadeiro.chocoball.price + brigadeiro.sprinkle.price,
+        brigadeiro: brigadeiro,
+        order: order)
+  	end
+
+    session[:new_order] = Order.find(order.id)
+
   end
 
   def order
