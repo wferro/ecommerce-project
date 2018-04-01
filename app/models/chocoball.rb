@@ -1,3 +1,4 @@
+# Chocoball class
 class Chocoball < ApplicationRecord
   has_many :brigadeiro
   validates :name, presence: true

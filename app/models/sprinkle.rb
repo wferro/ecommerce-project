@@ -1,3 +1,4 @@
+# Sprinkle class
 class Sprinkle < ApplicationRecord
   has_many :brigadeiro
   validates :name, presence: true
