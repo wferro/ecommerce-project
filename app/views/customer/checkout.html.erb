@@ -1,2 +1,64 @@
-<h1>Customer#checkout</h1>
-<p>Find me in app/views/customer/checkout.html.erb</p>
+
+	<div id="all">
+    <%= render "commons/commonHeader" %>
+    <section class="top-section">
+      <div class="offset-borders">
+            <div class="full-header-container" id="header-services">
+                <div class="full-header">
+                    <div class="container">
+                        <h1>checkout</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <section id="checkout-section">
+            <div class="section-content">
+                <div class="container">
+                    <header class="section-header">
+                        <h1>Your Order</h1>
+                    </header>
+										<div>
+											<div class="grid-item">
+												<h3>Customer: <%= session[:delivery_address]['user']['name'] %></h3>
+                        <h3>Location: <%= session[:delivery_address]['location'] %></h3>
+                        <h3>Postal Code: <%= session[:delivery_address]['postal_code'] %></h3>
+                        <hr>
+                        <h2>Order</h2>
+                        <h3>Subtotal: <%= session[:new_order]['total'] %></h3>
+                        <h3>GST: <%= session[:new_order]['gst'] %></h3>
+                        <h3>PST: <%= session[:new_order]['pst'] %></h3>
+                        <h3>TOTAL: <%= session[:new_order]['total'] %></h3>
+											</div>
+                      <hr>
+										</div>
+                </div><!-- .container -->
+            </div><!-- .section-content -->
+          </section>
+
+          <hr>
+
+          <section>
+            <div class="section-content">
+                <div class="container">
+										<div>
+                      <%= form_tag(customer_order_path, method: "post") do %>
+                        <h2>Credit Card Infomration</h2>
+                        <%= label_tag(:card_number, "Number:") %>
+                        <%= text_field_tag(:card_number) %><br><br>
+                        <%= label_tag(:card_month, "Month:") %>
+                        <%= text_field_tag(:card_month) %><br><br>
+                        <%= label_tag(:card_year, "Year:") %>
+                        <%= text_field_tag(:card_year) %><br><br>
+                        <%= label_tag(:card_cdv, "CDV:") %>
+                        <%= text_field_tag(:card_cdv) %><br><br>
+												<%= submit_tag("Place Order") %>
+                      <% end %>
+                      </div>
+                      <hr>
+										</div>
+                </div><!-- .container -->
+        </section>
+    </div>
