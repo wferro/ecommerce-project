@@ -26,10 +26,10 @@
                         <h3>Postal Code: <%= session[:delivery_address]['postal_code'] %></h3>
                         <hr>
                         <h2>Order</h2>
-                        <h3>Subtotal: $<%= session[:new_order]['total'] %></h3>
-                        <h3>GST: $<%= session[:new_order]['gst'] %></h3>
-                        <h3>PST: $<%= session[:new_order]['pst'] %></h3>
-                        <h3>TOTAL: $<%= session[:new_order]['total'] %></h3>
+                        <h3>Subtotal: $<%= session[:new_order]['total'] / 100.0 %></h3>
+                        <h3>GST: $<%= session[:new_order]['gst'] /100.0 %></h3>
+                        <h3>PST: $<%= session[:new_order]['pst'] /100.0 %></h3>
+                        <h3>TOTAL: $<%= session[:new_order]['total'] /100.0 + session[:new_order]['gst'] /100.0 + session[:new_order]['pst'] /100.0 %></h3>
 											</div>
                       <hr>
 										</div>
