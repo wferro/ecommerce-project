@@ -51,11 +51,11 @@ class CustomerController < ApplicationController
 		end
 
     order = Order.create(
-      status: status,
       user: user,
       total: total,
-      pst: total * pst / 100,
-      gst: total * gst / 100)
+      pst: total * province.pst / 100,
+      gst: total * province.gst / 100,
+      status: status)
 
   end
 
