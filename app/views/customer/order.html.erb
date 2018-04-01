@@ -1,2 +1,17 @@
-<h1>Customer#order</h1>
-<p>Find me in app/views/customer/order.html.erb</p>
+
+	<div id="all">
+    <%= render "commons/commonHeader" %>
+    <section class="top-section">
+      <div class="offset-borders">
+            <div class="full-header-container" id="header-services">
+                <div class="full-header">
+                    <div class="container">
+                      <% if flash[:success]  %>
+                        <h1><%= flash[:success] %></h1>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>

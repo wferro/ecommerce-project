@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'customer/order'
-
   get 'contact', to: 'store#contact'
   get 'about', to: 'store#about'
   get 'brigadeiros', to: 'brigadeiros#index'
@@ -15,6 +13,7 @@ Rails.application.routes.draw do
   post 'updateItemCart/:id', to: 'customer#updateItemCart', as: 'updateItemCart'
 
   post 'customer/checkout', to: 'customer#checkout', as: 'customer_checkout'
+  post 'customer/order', to: 'customer#order', as: 'customer_order'
 
   root to: 'brigadeiros#index'
 

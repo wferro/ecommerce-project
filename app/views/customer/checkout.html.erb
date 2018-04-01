@@ -22,15 +22,14 @@
                     </header>
 										<div>
 											<div class="grid-item">
-												<h3>Customer: <%= session[:delivery_address]['user']['name'] %></h3>
                         <h3>Location: <%= session[:delivery_address]['location'] %></h3>
                         <h3>Postal Code: <%= session[:delivery_address]['postal_code'] %></h3>
                         <hr>
                         <h2>Order</h2>
-                        <h3>Subtotal: <%= session[:new_order]['total'] %></h3>
-                        <h3>GST: <%= session[:new_order]['gst'] %></h3>
-                        <h3>PST: <%= session[:new_order]['pst'] %></h3>
-                        <h3>TOTAL: <%= session[:new_order]['total'] %></h3>
+                        <h3>Subtotal: $<%= session[:new_order]['total'] %></h3>
+                        <h3>GST: $<%= session[:new_order]['gst'] %></h3>
+                        <h3>PST: $<%= session[:new_order]['pst'] %></h3>
+                        <h3>TOTAL: $<%= session[:new_order]['total'] %></h3>
 											</div>
                       <hr>
 										</div>
