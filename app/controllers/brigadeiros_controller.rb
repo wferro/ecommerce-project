@@ -1,3 +1,4 @@
+load 'CartItem.rb'
 class BrigadeirosController < ApplicationController
   def index
 
@@ -26,10 +27,15 @@ class BrigadeirosController < ApplicationController
   end
 
   def addCart
-    id = params[:id].to_i
     session[:my_cart] ||= []
-    session[:my_cart] << id
-    @cartItems = Brigadeiro.find(session[:my_cart])
-    redirect_to customers_path
+    b = Brigadeiro.find(params[:id])
+    session[:my_cart] << CartItem.new(params[:qtd], b)
+    flash[:message] = " #{params[:qtd]} brigadeiros of  #{b.name}  added succesfuly to your cart"
+    redirect_to cart_path
+  end
+
+  def removeCart
+    session[:my_cart] = []
+    redirect_to root_path
   end
 end

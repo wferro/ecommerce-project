@@ -1,13 +1,22 @@
 Rails.application.routes.draw do
 
+  get 'customer/order'
+
+  get 'customer/checkout'
+
   get 'contact', to: 'store#contact'
   get 'about', to: 'store#about'
   get 'brigadeiros', to: 'brigadeiros#index'
   get 'brigadeiros/:id', to: 'brigadeiros#show'
-  post 'brigadeiros/:id/addCart', to: 'brigadeiros#addCart'
+  post 'brigadeiros/:id/addCart', to: 'brigadeiros#addCart', as: 'addCart'
   resources :brigadeiros
 
   get 'cart', to: 'customer#cart'
+  get 'removeCart', to: 'brigadeiros#removeCart', as: 'removeCart'
+  get 'removeItemCart/:id', to: 'customer#removeItemCart', as: 'removeItemCart'
+  post 'updateItemCart/:id', to: 'customer#updateItemCart', as: 'updateItemCart'
+
+
 
   root to: 'brigadeiros#index'
 

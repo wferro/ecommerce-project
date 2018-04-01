@@ -42,10 +42,12 @@
 											<div class="grid-item">
 												<h3><%= prod.name %></h3>
 												<h3>$<%= prod.getPrice %> each</h3>
-												<%= label_tag(:qtd, "Quantity:") %>
-												<%= select_tag :qtd, options_for_select(@quantities) %>
-												<%= link_to "Add to cart", brigadeiro_path(prod) %>
-												<%= link_to image_tag(prod.image, style:'height:20vw;width:15vw;margin-bottom:10px;'), brigadeiro_path(prod) %>
+												<%= form_tag(addCart_path(prod), method: "post") do %>
+													<%= label_tag(:qtd, "Quantity:") %>
+													<%= select_tag :qtd, options_for_select(@quantities) %>
+													<%= link_to image_tag(prod.image, style:'height:20vw;width:15vw;margin-bottom:10px;'), brigadeiro_path(prod) %>
+													<%= submit_tag("Add to cart") %>
+												<% end %>
 											</div>
 											<% end %>
 										</div>

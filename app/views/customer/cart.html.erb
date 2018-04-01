@@ -24,21 +24,30 @@
 										<% if @cartItems.empty? %>
 										<p> No item added to the cart yet
 										<% else %>
+
+                    <% if flash[:message]  %>
+                      <p><%= flash[:message] %></p>
+                    <% end %>
+
+
 										<div>
 											<% @cartItems.each do |item| %>
+                      <%= form_tag(updateItemCart_path(item['brigadeiro']['id']), method: "post") do %>
 											<div class="grid-item">
-												<h3><%= item.name %></h3>
-												<h3>$<%= item.getPrice %> each</h3>
+												<h3><%= item['brigadeiro']['name'] %></h3>
+												<h3>SubTotal: $<%= item['subtotal'] %></h3>
 												<%= label_tag(:qtd, "Quantity:") %>
-												<%= select_tag :qtd, options_for_select(@quantities) %>
-												<%= link_to "Update your cart", brigadeiro_path(prod) %>
+												<%= select_tag :qtd, options_for_select(@quantities, item['quantity']) %>
+												<%= submit_tag("Update Item") %>
+                        <%= link_to "Remove Item", removeItemCart_path(item['brigadeiro']['id']) %>
 											</div>
+                      <% end %>
                       <hr>
 											<% end %>
 										</div>
 										<% end %>
                 </div><!-- .container -->
             </div><!-- .section-content -->
-            <%= link_to "Delete your cart", brigadeiro_path(prod) %>
+            <%= link_to "Delete your cart", removeCart_path %>
         </section>
     </div>
