@@ -1,7 +1,7 @@
 load 'CartItem.rb'
 class BrigadeirosController < ApplicationController
+before_action :load_provinces
   def index
-
     @categories = Chocoball.all
     @quantities = [5,10,15,20]
     @keyword = params[:key_word]
@@ -37,5 +37,9 @@ class BrigadeirosController < ApplicationController
   def removeCart
     session[:my_cart] = []
     redirect_to root_path
+  end
+
+  def load_provinces
+    @provinces = Brigadeiro.all
   end
 end

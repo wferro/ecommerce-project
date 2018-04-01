@@ -1,6 +1,7 @@
 load 'CartItem.rb'
 class CustomerController < ApplicationController
   before_action :load_cart
+  before_action :load_provinces
   def cart
     @quantities = [5,10,15,20]
   end
@@ -35,6 +36,10 @@ class CustomerController < ApplicationController
   end
 
   def order
+  end
+
+  def load_provinces
+    @provinces = Brigadeiro.all
   end
 
 end

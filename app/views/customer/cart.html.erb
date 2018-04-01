@@ -49,5 +49,36 @@
                 </div><!-- .container -->
             </div><!-- .section-content -->
             <%= link_to "Delete your cart", removeCart_path %>
+<hr>
+            <div class="section-content">
+                <div class="container">
+										<div>
+                      <%= form_tag(checkoutCart_path, method: "post") do %>
+                        <h1>Customer Information</h1>
+                        <%= label_tag(:customer_name, "Name:") %>
+                        <%= text_field_tag(:customer_name) %>
+                        <%= label_tag(:customer_email, "Email:") %>
+                        <%= text_field_tag(:customer_email) %>
+                        <%= label_tag(:customer_phone, "Phone:") %>
+                        <%= text_field_tag(:customer_phone) %>
+                        <h3>Address</h3>
+                        <%= label_tag(:address_location, "Location:") %>
+                        <%= text_field_tag(:address_location) %>
+                        <%= label_tag(:address_postal, "Postal Code:") %>
+                        <%= text_field_tag(:address_postal) %>
+                        <%= label_tag(:address_info, "Additional Information:") %>
+                        <%= text_field_tag(:address_info) %>
+												<%= label_tag(:address_province, "Province:") %>
+												<%= select_tag :address_province, options_from_collection_for_select(@provinces, "id", "name") %>
+												<%= submit_tag("Checkout") %>
+											</div>
+                      <% end %>
+                      <hr>
+											<% end %>
+										</div>
+										<% end %>
+                </div><!-- .container -->
+            </div><!-- .section-content -->
+
         </section>
     </div>
