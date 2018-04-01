@@ -34,8 +34,9 @@ class CustomerController < ApplicationController
 
   def checkout
     province = Province.find(params[:address_province].to_i)
-    status = Status.where("name = 'AWAITING_PAYMENT'")
+    st = Status.where("name = 'AWAITING_PAYMENT'")
     user = User.create(name: params['customer_name'], email: params['customer_email'], phone: params['customer_phone'])
+
     address = Address.create(
       location: params['address_location'],
       postal_code: params['address_postal'],
@@ -55,7 +56,7 @@ class CustomerController < ApplicationController
       total: total,
       pst: total * province.pst / 100,
       gst: total * province.gst / 100,
-      status: status)
+      status_id: st.id)
 
   end
 
