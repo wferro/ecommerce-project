@@ -11,18 +11,19 @@ class BrigadeirosController < ApplicationController
     if !@keyword.blank?
       if !@catword.blank?
         @brigadeiros = Brigadeiro.where("name LIKE :query",
-          query: "%#{params[:key_word]}%").where(chocoball: @catword)
+          query: "%#{params[:key_word]}%").where(chocoball: @catword).page(params[:page]).per(8)
       else
         @brigadeiros = Brigadeiro.where("name LIKE :query",
-          query: "%#{params[:key_word]}%").order(name: :asc)
+          query: "%#{params[:key_word]}%").order(name: :asc).page(params[:page]).per(8)
       end
     else
       if !@catword.blank?
-        @brigadeiros = Brigadeiro.where(chocoball: @catword).order(name: :asc)
+        @brigadeiros = Brigadeiro.where(chocoball: @catword).order(name: :asc).page(params[:page]).per(8)
       else
-        @brigadeiros = Brigadeiro.all.order(name: :asc)
+        @brigadeiros = Brigadeiro.all.order(name: :asc).page(params[:page]).per(8)
       end
     end
+    @brigadeiros
   end
 
   def show

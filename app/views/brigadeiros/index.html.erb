@@ -39,7 +39,7 @@
 										<% else %>
 										<div class="grid-container">
 											<% @brigadeiros.each do |prod| %>
-											<div class="grid-item">
+												<div class="grid-item">
 												<h3><%= prod.name %></h3>
 												<h3>$<%= prod.getPrice %> each</h3>
 												<%= form_tag(addCart_path(prod), method: "post") do %>
@@ -50,6 +50,7 @@
 												<% end %>
 											</div>
 											<% end %>
+											<%= paginate @brigadeiros %>
 										</div>
 										<% end %>
                 </div><!-- .container -->
