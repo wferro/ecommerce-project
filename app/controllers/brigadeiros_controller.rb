@@ -4,20 +4,20 @@ class BrigadeirosController < ApplicationController
 
   def index
     @categories = Chocoball.all
-    @quantities = [5, 10, 15,   20]
+    @quantities = [5, 10, 15, 20]
     @keyword = params[:key_word]
     @catword = params[:cat]
 
-    if !@keyword.present?
-      if !@catword.present?
-        @brigadeiros = Brigadeiro.where('name LIKE :query',
+    if !@keyword.blank?
+      if !@catword.blank?
+        @brigadeiros = Brigadeiro.where("name LIKE :query",
           query: "%#{params[:key_word]}%").where(chocoball: @catword)
       else
-        @brigadeiros = Brigadeiro.where('name LIKE :query',
+        @brigadeiros = Brigadeiro.where("name LIKE :query",
           query: "%#{params[:key_word]}%").order(name: :asc)
       end
     else
-      if !@catword.present?
+      if !@catword.blank?
         @brigadeiros = Brigadeiro.where(chocoball: @catword).order(name: :asc)
       else
         @brigadeiros = Brigadeiro.all.order(name: :asc)
@@ -33,8 +33,8 @@ class BrigadeirosController < ApplicationController
     session[:my_cart] ||= []
     b = Brigadeiro.find(params[:id])
     session[:my_cart] << CartItem.new(params[:qtd], b)
-    flash[:message] = ' #{params[:qtd]} brigadeiros of
-                      #{b.name}  added succesfuly to your cart'
+    flash[:message] = " #{params[:qtd]} brigadeiros of
+      #{b.name}  added succesfuly to your cart"
     redirect_to cart_path
   end
 
