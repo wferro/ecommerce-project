@@ -5,7 +5,16 @@
 		</div>
 		<nav id="nav-top" class="nav-top">
 			<ul>
-				<li><%= link_to 'Home', "/" %></li>
+				<li>
+					<%= link_to 'Home', "/" %>
+					<ul>
+						<% Chocoball.all.each do |cat| %>
+							<li>
+								<%= link_to cat.name, "?cat=#{cat.id}" %>
+							</li>
+						<% end %>
+					</ul>
+				</li>
 				<li><%= link_to 'About', "/about" %></li>
 			</ul>
 			<h1 class="logo-primary">
