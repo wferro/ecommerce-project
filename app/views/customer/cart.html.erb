@@ -36,8 +36,8 @@
 											<div class="grid-item">
 												<h3><%= item['brigadeiro']['name'] %></h3>
 												<h3>SubTotal: $<%= item['subtotal'] %></h3>
-												<%= label_tag(:qtd, "Quantity:") %>
-												<%= select_tag :qtd, options_for_select(@quantities, item['quantity']) %>
+												<%= label_tag(item['brigadeiro']['id'], "Quantity:") %>
+												<%= select_tag item['brigadeiro']['id'], options_for_select(@quantities, item['quantity']) %>
 												<%= submit_tag("Update Item") %>
                         <%= link_to "Remove Item", removeItemCart_path(item['brigadeiro']['id']) %>
 											</div>
