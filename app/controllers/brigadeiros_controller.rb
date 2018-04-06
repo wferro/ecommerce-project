@@ -1,22 +1,23 @@
 load 'CartItem.rb'
 class BrigadeirosController < ApplicationController
-before_action :load_provinces
+  before_action :load_provinces
+
   def index
     @categories = Chocoball.all
-    @quantities = [5,10,15,20]
+    @quantities = [5, 10, 15,   20]
     @keyword = params[:key_word]
     @catword = params[:cat]
 
-    if !@keyword.blank?
-      if !@catword.blank?
-        @brigadeiros = Brigadeiro.where("name LIKE :query",
+    if !@keyword.present?
+      if !@catword.present?
+        @brigadeiros = Brigadeiro.where('name LIKE :query',
           query: "%#{params[:key_word]}%").where(chocoball: @catword)
       else
-        @brigadeiros = Brigadeiro.where("name LIKE :query",
+        @brigadeiros = Brigadeiro.where('name LIKE :query',
           query: "%#{params[:key_word]}%").order(name: :asc)
       end
     else
-      if !@catword.blank?
+      if !@catword.present?
         @brigadeiros = Brigadeiro.where(chocoball: @catword).order(name: :asc)
       else
         @brigadeiros = Brigadeiro.all.order(name: :asc)
@@ -32,8 +33,8 @@ before_action :load_provinces
     session[:my_cart] ||= []
     b = Brigadeiro.find(params[:id])
     session[:my_cart] << CartItem.new(params[:qtd], b)
-    flash[:message] = " #{params[:qtd]} brigadeiros of
-      #{b.name}  added succesfuly to your cart"
+    flash[:message] = ' #{params[:qtd]} brigadeiros of
+                      #{b.name}  added succesfuly to your cart'
     redirect_to cart_path
   end
 
